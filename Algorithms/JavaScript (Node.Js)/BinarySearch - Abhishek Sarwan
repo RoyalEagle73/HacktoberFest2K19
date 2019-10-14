@@ -1,0 +1,31 @@
+/*Author: Abhishek Sarwan //worstguyalive
+  Github: abhisheksarwan
+*/
+
+function binarySearch(arr,num){
+  
+  var left = 0;
+  var right = arr.length - 1;
+      
+  var middle = Math.floor((left+right)/2);
+  
+  while(arr[middle] !== num && left <= right)
+  {
+      
+      
+      if(num > arr[middle]) { left = middle+1; }
+      
+      else { right = middle-1; }
+      
+      middle = Math.floor((left+right)/2);
+      
+   }
+  
+   if(arr[middle] === num){ return middle;}
+  
+   return -1;
+
+}
+
+binarySearch([8,9,7],8)
+
