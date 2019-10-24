@@ -41,7 +41,7 @@ int main()
     printf("\n1.Non Prime Series\n2.Non Fibonacci Series\n3.Exit\n");
     scanf("%d",&ch);
     printf("\nEnter A Range:");
-    scanf("%d-%d",&a,&b);
+    scanf("%d %d",&a,&b);
     switch(ch)
     {
         case 1:nonprime(a,b);
