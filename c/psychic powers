@@ -1,0 +1,42 @@
+
+// Sample code to perform I/O:
+#include <stdio.h>
+
+int main(){
+	char num[1000];
+	scanf("%s", num);
+int flag=0,c=0,k=0,i=0;
+while(num[i]!='\0')
+{
+    while(num[i]=='0')
+    {
+        c++;
+        i++;
+    }
+    if(c>=6)
+    {
+        flag=1;
+        break;
+    }
+    else
+        c=0;
+    while(num[i]=='1')
+    {
+        k++;
+        i++;
+    }
+    if(k>=6)
+    {
+        flag=1;
+         break;
+    }
+    else
+    k=0;
+    //i++;
+}
+if(flag==0)
+printf("Good luck!");
+else
+printf("Sorry, sorry!");
+}
+

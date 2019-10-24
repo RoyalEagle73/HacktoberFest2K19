@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+int a=7,b=9,c=6;
+printf("greatest number\n");
+if(a>b)
+{
+if(a>c)
+{printf("%d is greater\n",a);}
+else
+{printf("%d is greater\n",c);}
+}
+else
+{if(b>c)
+{printf("%d is greater",b);}
+else
+{printf("%d is greater",c);}}
+return 0;
+}
