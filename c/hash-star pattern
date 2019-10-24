@@ -1,0 +1,31 @@
+
+#include <stdio.h>
+
+int main(){
+	int i,j,k,n,f,a[100000];
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	scanf("%d",&a[i]);
+
+	for(f=0;f<=n;f++)
+	 
+	     {  k=a[f]-1;
+	         for(i=1;i<=a[f];i++)
+	        {
+	            for(j=1;j<=a[f]*2;j++)
+	         {     
+	         if(j>=i+1&&j<=(2*k)+i)
+	             printf("#");
+	        else
+	        printf("*");
+	        }
+	       k--;
+	    printf("\n");
+	       }
+	     
+	      printf("\n");
+}
+
+	      return 0;
+	 
+}
