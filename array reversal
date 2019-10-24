@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+int num,i,j,a[100],b[100];
+printf("enter the no of element in array :\n");
+scanf("%d",&num);
+printf("enter array elements\n");
+for(i=0;i<num;i++)
+     scanf("%d",&a[i]);
+     for(i=num-1,j=0;i>=0;i--,j++)
+     b[j]=a[i];
+     for(i=0;i<num;i++)
+        a[i]=b[i];
+        printf("reverse array is\n");
+    for(i=0;i<num;i++)
+       printf("%d \n",a[i]);
+    return 0;
+    }
