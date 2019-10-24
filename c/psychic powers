@@ -37,6 +37,6 @@ while(num[i]!='\0')
 if(flag==0)
 printf("Good luck!");
 else
-printf("Sorry, sorry!");// Writing output to STDOUT
+printf("Sorry, sorry!");
 }
 
