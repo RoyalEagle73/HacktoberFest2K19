@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+int a,b,c;
+printf(ënter the num=")";
+scanf("%d%d",&a,&b);
+c=a;
+a=b;
+b=c;
+printf("%d",b);
+return 0;
+}
