@@ -1,0 +1,36 @@
+#include<stdio.h>
+int min(int a[],int,int);
+int main()
+{ int n;
+scanf("%d",&n);
+int arr[n],i,li,temp;
+for(i=0;i<n;i++)
+    scanf("%d",&arr[i]);
+for(i=0;i<n-1;i++)
+{
+    li=min(arr,i,n);
+    temp=arr[i];
+    arr[i]=arr[li];
+    arr[li]=temp;
+}
+for(i=0;i<n;i++)
+    printf("%d  ",arr[i]);
+return 0;
+
+
+}
+int min(int a[],int loc,int n)
+{
+   int k;
+   int min=a[loc];
+   for(k=loc+1;k<n;k++)
+   {
+       if(min>a[k])
+       {
+           min=a[k];
+           loc=k;
+       }
+   }
+   return loc;
+}
+
