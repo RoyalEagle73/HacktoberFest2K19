@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,sum=0;
+    scanf("%d",&n);
+    for(i=1;sum<=n;i++){
+          if(i>=(n-sum)){
+          printf("Patlu");
+          break;
+          }
+          else if((i*2)>=(n-sum))
+          {
+          printf("Motu");
+          break;
+          }
+          sum=sum+i;
+           if(i>=(n-sum)){
+          printf("Patlu");
+          break;
+          }
+          
+          else if((i*2)>=(n-sum))
+          {
+          printf("Motu");
+          break;
+          }
+          sum=sum+i*2;
+          
+    
+    }
+return 0;
+    
+}
