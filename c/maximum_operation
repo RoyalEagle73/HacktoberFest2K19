@@ -1,0 +1,35 @@
+#include<iostream>
+#include<stdio.h>
+using namespace std;
+long int getxnor(long int n,long int m)
+{
+    long int nb,xnorr=m,mask=0;
+    for(nb=0;xnorr;mask|=(1<<nb),xnorr>>=1,nb++);
+    if(nb<3)
+    mask=mask|7;
+    xnorr=n^mask;
+    return xnorr;
+}
+int main()
+{
+    long int a,b,t,n;
+    cin>>t;
+    while(t--)
+    {
+        int rem;
+        cin>>a>>b>>n;
+        long int arr[3];
+        arr[1]=a;
+        arr[2]=b;
+        rem=n%3;
+        if(!rem)
+        {
+            long int xnorr;
+            arr[0]=a^b;
+            xnorr=getxnor(arr[0],(a>b)?a:b);
+            arr[0]=(arr[0]>xnorr)?arr[0]:xnorr;
+        }
+        cout<<arr[rem]<<endl;
+    }
+
+}
