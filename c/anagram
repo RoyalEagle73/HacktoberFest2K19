@@ -1,0 +1,33 @@
+/*Arnagrame programme*/
+#include<stdio.h>
+ int main()
+  { char str1[50],str2[50],count1[26]={0},count2[26]={0},flage=0,i,j,k;
+     printf("Enter a string str1 and str2\n");
+     gets(str1);
+     gets(str2);
+      for(i=0;str1[i]!='\0';++i)
+        { 
+           count1[str1[i]-'a']++;
+           
+    
+		}
+		for(j=0;str2[j]!='\0';++j)
+		  { 
+		     count2[str2[j]-'a']++;
+		    
+		  }
+
+      for(k=0;k<26;++k)
+	   { 
+		printf("count1=%d count2=%d \n",count1[i],count2[i]); 
+					
+					  
+			   
+        }
+       if(flage==0)
+	     printf(" Arnagrams");
+		 else
+		   printf(" Not Arnagrams");
+		   
+		 return 0;
+   }
