@@ -1,0 +1,75 @@
+#include<stdio.h>
+
+void func_simp(double,double,int); /* Function to find the value of the integral by using Simpson's one-
+                                                              third formula */
+double f(double); // Function to create the function whose integral is to be found
+
+int n;
+double a,b;
+
+void main()
+{
+	printf("\n  SIMPSON'S ONE-THIRD RULE  ");
+	printf("\n --------------------------");
+	
+	printf("\n\n Enter the lower limit of the integral : ");
+	scanf("%lf",&a);
+	
+	printf("\n Enter the upper limit of the integral : ");
+	scanf("%lf",&b);
+	
+	printf("\n Enter the number of sub-intervals : ");
+	scanf("%d",&n);
+	
+	if(n%2==0) // Checking whether the given number of sub-intervals are even or not
+		func_simp(a,b,n);
+	else
+      printf("\n NUMBER OF SUB INTERVALS SHOULD BE EVEN !! ");
+} // end of main
+
+void func_simp(double a, double b, int n)
+{
+	double h,s1,s2,in,s4;
+	int i;
+	
+	h=(b-a)/n; // Calculating the step length
+	
+	s1=f(a)+f(b); // Generating the 1st and the last ordinates and adding them
+	s2=0.0;
+	s4=0.0;
+	
+	// Generating the ordinates ( except the 1st and the last one )
+	for(i=1;i<=(n-1);i++)
+	{
+		if(i%2!=0)
+			s4=s4+f(a+(i*h)); // Generating the odd ordinates
+		else
+			s2=s2+f(a+(i*h)); // Generating the even ordinates
+	} // end of for
+	
+	// Finding the result as per the formula
+	in=(h/(3.0))*(s1+(4*s4)+(2*s2));
+	
+	// Printing the final result
+	printf("\n Result is : %lf",in);
+} // end of function
+
+double f(double x)
+{
+	double s=1.0,term=1.0,temp=0;
+	int i=1;
+	
+	// Generating the series of 'e^x'
+	while(1)
+	{
+		temp=s;
+		term=term*(x/i);
+		s=s+term;
+		if((s-temp)<=0.0001)
+       break;
+		i++;
+	} // end of while
+	return s;  // Retuning the value after evaluating the function with value 'x'
+} // end of function
+
+
