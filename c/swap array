@@ -1,0 +1,43 @@
+#include<stdio.h>
+int arr[1000][1000];
+int i,j;
+void interchange(int , int);
+int main()
+{
+	int T,r,c;
+	int z;
+	printf("enter the t and row and column");
+	scanf("%d%d%d",&T,&r,&c);
+	for(z=0;z<T;z++)
+	{
+	for(i=0;i<r;i++)
+	{
+		for(j=0;j<c;j++)
+		{
+			scanf("%d",&arr[i][j]);
+		}
+	}
+	interchange(r,c);
+	}
+	return 0;
+}
+void interchange(int r,int c)
+{
+	int temp;
+	for(i=0;i<r;i++)
+	{
+			j=0;
+			temp=arr[i][j];
+			arr[i][j]=arr[i][c-1];
+			arr[i][c-1]=temp;
+	}
+        for(i=0;i<r;i++)
+        {
+                for(j=0;j<c;j++)
+                {
+                        printf("%d\t",arr[i][j]);
+                }
+		printf("\n");
+        }
+
+}
