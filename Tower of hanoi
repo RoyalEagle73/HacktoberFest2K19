@@ -1,0 +1,23 @@
+#include<stdio.h>
+void tofh(int ndisk,char source,char temp,char dest);
+int main()
+{
+char source ='X',temp='Y',dest='Z';
+int ndisk;
+printf("enter the number of disk : ");
+scanf("%d",&ndisk);
+printf("sequence is : \n");
+tofh(ndisk,source,temp,dest);
+return 0;
+}
+void tofh(int ndisk,char source,char temp,char dest)
+{
+if(ndisk==1)
+{
+printf("move disk %d from %c --> %c\n",ndisk,source,dest);
+return ;
+}
+tofh(ndisk-1,source,dest,temp);
+printf("move disk %d from %c --> %c\n",ndisk,source,dest);
+tofh(ndisk-1,temp,source,dest);
+}
