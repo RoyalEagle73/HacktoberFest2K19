@@ -1,0 +1,15 @@
+#include<stdio.h>
+void sum()__attribute__((constructor));
+int main()
+{
+    printf("\nMain function executes");
+    return 0;
+}
+void sum()
+{
+    int a,b,c;
+    printf("\nEnter two numbers: ");
+    scanf("%d%d",&a,&b);
+    c=a+b;
+    printf("\nThe sum is: %d",c);
+}
