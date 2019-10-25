@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+  int f=1;
+  printf("Enter any number !\t");
+  scanf("%d",&n);
+  for(i=0;i<=n;i++)
+  {
+    f=f*i;
+  }
+  printf("factorial of given number=%d",f);
+  return 0;
+}
