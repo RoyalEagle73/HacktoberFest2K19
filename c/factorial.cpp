@@ -1,12 +1,17 @@
-#include<stdio.h>
-int N=5,f=1;
- main(int n)
+#include <stdio.h>
+long int multiplyNumbers(int n);
+int main()
 {
-if(n<=N)
-  {
-   f=f*n;
-   main(n+1);
+    int n;
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+    printf("Factorial of %d = %ld", n, multiplyNumbers(n));
+    return 0;
 }
-  else
-   printf("%d",f);
+long int multiplyNumbers(int n)
+{
+    if (n >= 1)
+        return n*multiplyNumbers(n-1);
+    else
+        return 1;
 }
