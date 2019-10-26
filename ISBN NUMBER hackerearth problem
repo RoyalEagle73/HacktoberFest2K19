@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+     int x,i,j,r,sum=0;
+     scanf("%d",&x);
+     for(i=10;i>=1;i--)
+    {
+        r=x%10;
+        sum+=i*r;
+        x=x/10;
+        if(x==0)
+        break;
+    }
+    if(i!=1)
+    {
+     printf("Illegal ISBN");
+     return 0;
+    }
+    if(sum%11==0)
+     printf("Legal ISBN");
+    else
+     printf("illegal ISBN");
+  return 0;
+}
